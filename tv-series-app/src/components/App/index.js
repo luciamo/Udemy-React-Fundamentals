@@ -11,7 +11,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">TV Series List</h1>
         </header>
-        <Intro  message="Here you can find all of your most loved series"/>
+        <Intro message="Here you can find all of your most loved series"/>
         <Series />
       </div>
     );
