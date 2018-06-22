@@ -9,9 +9,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">TV Series List</h1>
+          <h1 className="App-title">Minha lista de séries</h1>
         </header>
-        <Intro message="Here you can find all of your most loved series"/>
+        <Intro message="Aqui você encontra as suas séries <3"/>
         <Series />
       </div>
     );
