@@ -3,19 +3,20 @@ import Loader from '../../components/Loader';
 
 class SingleSeries extends Component {
   state = {
-    show: null
+    show: null,
+    seasons: null
   }
 
   componentDidMount() {
     const { id } = this.props.match.params;
-		fetch(`http://api.tvmaze.com/shows/${id}?embed=episodes`)
+		fetch(`http://api.tvmaze.com/shows/${id}`)
 		.then((response) => response.json())
 		.then(json => this.setState({ show : json }));
   }
 
   render() {
-    const {show} = this.state;
-    console.log(show);
+    const { show } = this.state;
+    console.log(this.state);
     return(
       <div>
         { show === null && <Loader/> }
@@ -23,7 +24,6 @@ class SingleSeries extends Component {
           <div>
             <p>{show.name}</p>
             <p>Premiered - {show.premiered}</p>
-            <p>Episodes - {show._embedded.episodes.length}</p>
             <p>
               <img alt="show" src={show.image.medium}/>
             </p>
